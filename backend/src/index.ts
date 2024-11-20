@@ -1,6 +1,7 @@
 import { Hono } from "hono";
 import { PrismaClient } from "@prisma/client/edge";
 import { withAccelerate } from "@prisma/extension-accelerate";
+import { userRoutes } from "./routes/user";
 
 const app = new Hono<{
   Bindings: {
@@ -10,8 +11,6 @@ const app = new Hono<{
 }>();
 // const prisma = new PrismaClient({datasourceUrl:env.DATABASE_URL}).$extends(withAccelerate());
 
-app.get("/", (c) => {
-  return c.text("Hello Hono!");
-});
+app.route("/api/v1/users", userRoutes);
 
 export default app;
