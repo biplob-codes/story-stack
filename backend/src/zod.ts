@@ -11,3 +11,8 @@ export const loginInput = z.object({
   email: z.string().email().max(100),
   password: z.string().min(8),
 });
+
+export const postInput = z.object({
+  title: z.string().min(5),
+  description: z.string(),
+});
