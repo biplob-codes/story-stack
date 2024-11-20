@@ -1,7 +1,7 @@
 import { Hono } from "hono";
 import { PrismaClient } from "@prisma/client/edge";
 import { withAccelerate } from "@prisma/extension-accelerate";
-import { postInput } from "../zod";
+import { postInput } from "@biplob-codes/story-stack-common";
 
 export const postRoutes = new Hono<{
   Bindings: {

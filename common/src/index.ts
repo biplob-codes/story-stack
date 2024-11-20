@@ -16,3 +16,6 @@ export const postInput = z.object({
   title: z.string().min(5),
   description: z.string(),
 });
+export type signupInput = z.infer<typeof signupInput>;
+export type loginInput = z.infer<typeof loginInput>;
+export type postInput = z.infer<typeof postInput>;
